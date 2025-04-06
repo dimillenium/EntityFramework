@@ -1,4 +1,4 @@
-# Garneau Template
+
 
 ## Stack
 
