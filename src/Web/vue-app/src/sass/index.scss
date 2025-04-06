@@ -1,0 +1,248 @@
+$dore: #e5a97d;
+
+@use "sass:math";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-karla;
+  }
+
+  .hero-title{
+    @apply font-cormorant;
+    @apply leading-tight;
+    @apply text-6xl;
+    @apply font-extrabold;
+  }
+  .section-title{
+    @apply font-cormorant;
+    @apply leading-tight;
+    @apply text-4xl;
+    @apply font-extrabold;
+  }
+}
+
+@layer utilities {
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.6s ease-out forwards;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-up {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
+
+//Some generics styles, to have the app styling when using app localhost.
+@import // tools
+'tools/functions',
+'tools/colors',
+'tools/variables',
+'tools/mixins',
+'tools/easings',
+'tools/mediaqueries',
+  //base
+'base/reset',
+'base/fontface',
+'base/globals';
+
+
+//Using more specificity to win against main website and override when necessary
+#app {
+  @import 'base/container',
+  'base/typography',
+  'base/forms',
+  'base/grid',
+  'base/util',
+  'base/icon',
+  'plugins/vue-notification',
+  'plugins/vue-quill',
+  'plugins/vue3-easy-data-table',
+  'plugins/vue-tippy',
+    //blocks ----------------------------------
+  'blocks/authentification-page',
+  'blocks/admin-navbar',
+  'blocks/back-link',
+  'blocks/back-link-title',
+  'blocks/breadcrumbs',
+  'blocks/btn',
+  'blocks/card',
+  'blocks/content-grid',
+  'blocks/content-grid',
+  'blocks/dashboard',
+  'blocks/form-errors-list',
+  'blocks/lang-switcher',
+  'blocks/loader',
+  'blocks/navbar',
+  'blocks/plus-sign',
+  'blocks/popup',
+  'blocks/progress-ring',
+  'blocks/search-input',
+  'blocks/subnav',
+  'blocks/tag',
+  'blocks/text-link',
+  'blocks/tooltip',
+  'blocks/user-avatar';
+}
+
+
+.flex {
+  display: flex;
+}
+
+.ecarte {
+  justify-content: space-between;
+}
+
+.aligner-v * {
+  align-self: center;
+}
+
+.padding-5 {
+  padding: 5px;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.f2 {
+  flex: 2;
+}
+
+.hero {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.hero > img {
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+
+}
+
+.hero > div {
+  position: absolute;
+  width: 33%;
+  text-align: center;
+  color: white;
+
+}
+
+
+.bouton {
+  padding: 10px 20px;
+  width: min-content;
+  white-space: nowrap;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+
+.ecart-20 {
+  gap: 20px;
+}
+
+.bord-noir {
+  border: 2px solid black;
+
+}
+
+.dore {
+  background-color: $dore;
+  border: 2px solid $dore;
+}
+
+.noir {
+  background-color: black;
+  border: 2px solid black;
+}
+
+
+.bouton.noir {
+  background-color: white;
+}
+
+.bouton.dore:hover {
+  background-color: white;
+  border: 2px solid $dore;
+}
+
+.bouton.bord-noir:hover {
+  background-color: #000000;
+  color: white;
+  border: 2px solid black;
+}
+
+.width-complet {
+  width: 100%;
+}
+
+.width-20{
+  width: 20%;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+

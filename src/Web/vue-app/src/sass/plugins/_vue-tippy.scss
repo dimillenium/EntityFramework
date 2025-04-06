@@ -1,0 +1,18 @@
+.tippy-box[data-theme~='custom-em-no-joyaux-app'] {
+  background-color: $color-grey-lighter;
+  border: 1px solid $color-grey-light;
+  padding: 8px 12px;
+  font-size: rem(13);
+  line-height: rem(16);
+  font-weight: 500;
+  color: $color-grey-medium;
+  box-shadow: $small-shadow;
+
+  .tippy-content {
+    padding: 0;
+  }
+
+  .tippy-arrow {
+    color: $color-green-lighter;
+  }
+}

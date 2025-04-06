@@ -1,0 +1,65 @@
+.btn {
+  display: flex;
+  width: 100%;
+  font-family: $font-montserrat;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: rem(16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border: 2px solid transparent;
+  border-radius: 0;
+  text-transform: uppercase;
+  @include fullBtn($color-green, $color-black);
+
+  //States ----------
+  &:disabled,
+  &--disabled {
+    pointer-events: none;
+    background-color: $color-grey-light;
+    color: $color-grey-medium;
+  }
+}
+
+
+
+//Breakpoints ==================================
+@include breakpoint(sm-up) {
+  .btn {
+    width: 100%;
+  }
+}
+// css personalise
+.btn-base-black {
+
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 0;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-base-black:hover {
+  background-color: #ffffff;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-base-white {
+
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 0;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-base-white:hover {
+  background-color: #f0f0f0;
+  color: black;
+  border: 2px solid black;
+}
